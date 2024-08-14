@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Table Html</title>
+</head>
+<body>
+    <script>
+        var audio = new Audio('notification_sound.mp3');
+        var UserInteracted = setInterval(()=>{
+          audio.play()
+          .then(()=>{
+            clearInterval(UserInteracted);
+          })
+          .catch(()=>{
+            console.log("waiting for user interaction to play first notification")
+          });     
+        },1000)
+      </script>
+    <style>
+        html, body {
+   margin: 0;
+   padding: 0;
+}
+ 
+.container {
+   display: flex;
+   flex-wrap: wrap;
+}
+ 
+.box {
+   min-height: 150px;
+   width: 100%;
+}
+ 
+/*untuk layar device berukuran kecil*/
+@media screen and (min-width: 450px) {
+   .light_blue, .green {
+       width: 100%
+   }
+}
+ 
+/*untuk layar device berukuran sedang*/
+@media screen and (min-width: 550px) {
+   .red {
+       width: 100%;
+   }
+ 
+   .orange {
+       width: 100%;
+   }
+}
+ 
+/*untuk layar device berukuran besar*/
+@media screen and (min-width: 800px) {
+   .container {
+       width: 800px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+}
+body{
+    background-color: rgb(247, 248, 251);
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: image-set('https://i.pinimg.com/originals/34/16/fc/3416fc4113b69a0bf1cc75a772c4b5c4.gif');
+    background-size: cover;
+    background-position: center;
+}
+table{
+    align-content: center;
+    align-items: center;
+    color: black;
+    border-color: #00ADB5;
+    text-shadow: 0 0 10px rgb(252, 249, 249);
+    animation: glow 1s ease-in-out infinite alternate;
+ 
+}
+th{
+    align-content: center;
+    align-items: center;
+    color: black;
+    background-color:#03346E;
+    text-shadow: 0 0 10px rgb(252, 251, 251);
+    animation: glow 1s ease-in-out infinite alternate 
+}
+td{
+    align-content: center;
+    align-items: center;
+    color: black;
+    background-color: linear-gradient(#134B70,#7FA1C3);
+    text-shadow: 0 0 10px rgb(253, 252, 252);
+    animation: glow 1s ease-in-out infinite alternate 
+}
+h1{
+    text-align: center;
+    color: aquamarine;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 10px rgb(252, 252, 250);
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgb(250, 250, 250); 
+    }
+    to {
+        text-shadow: 0 0 20px rgb(248, 248, 248);
+    }
+}
+@keyframes glowing {
+    from {
+        text-shadow: 0 0 10px yellow;
+    }
+    to {
+        text-shadow: 0 0 20px yellow;
+    }
+}
+    </style>
+</body>
+<body>
+  <table border="10" align="center">
+    <audio hidden autoplay loop>
+        <source src="Relax.mp3" type="audio/mpeg"/>
+    </audio>
+    <div 
+    class="background">
+    </div>
+        <tr>
+            <th colspan="3">Produk Unggulan</th>
+        </tr>
+        <tr>
+            <td rowspan="4">
+                <img src="https://www.ceriasihat.com/wp-content/uploads/2020/08/jagung.jpg" alt="" width="250" height="300">
+            </td>
+        </tr>
+        <tr>
+            <td>Nama</td>
+            <td>Benih Kode</td>
+        </tr>
+        <tr>
+            <td>Harga</td>
+            <td>Rp 192.000</td>
+        </tr>
+        <tr>
+            <td>Fitur</td>
+            <td>
+                <ul>
+                    <li>Dilengkapi Dokumentasi</li>
+                    <li>Ukuran: 31MB</li>
+                    <li>Masa Tanam: 6 Bulan</li>
+                    <li>Lisensi: MIT</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+</body>
+</html>
